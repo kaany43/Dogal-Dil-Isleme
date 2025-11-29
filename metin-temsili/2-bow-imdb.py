@@ -5,6 +5,9 @@ import pandas as pd
 import numpy as np
 import re
 from collections import Counter
+import nltk
+from nltk.corpus import stopwords
+nltk.download('stopwords')
 
 #Veri setini yükleme
 df = pd.read_csv('data\IMDB Dataset.csv')
@@ -21,8 +24,14 @@ def clean_text(text):
     text = re.sub(r'[^\w\s]', '', text)
     #Fazla boşlukları kaldırma
     text = ' '.join(text.split())
-    #Kelime uzunluğu 2'den kısa olanları kaldırma
-    text = ' '.join([word for word in text.split() if len(word) > 2])
+    #Stop kelimeleri kaldırma (örnek olarak İngilizce stop kelimeleri)
+    stop_words = set(stopwords.words('english'))
+    words = text.split()
+    words = [word for word in words if word not in stop_words]
+    text = ' '.join(words)
+    #Sayiları kaldırma
+    text = re.sub(r'\d+', '', text)
+
     return text
 
 #Metinleri temizleme
