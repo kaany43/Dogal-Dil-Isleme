@@ -19,12 +19,17 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
 
 # Virtual environments
 venv/
 ENV/
 env/
 .venv
+env.bak/
+venv.bak/
 
 # IDE
 .vscode/
@@ -33,14 +38,36 @@ env/
 *.swo
 *~
 .DS_Store
+*.sublime-project
+*.sublime-workspace
 
 # Data files (large datasets)
-data/
+data/*.csv
+data/*.xlsx
+!data/.gitkeep
 
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb
 
+# Model files (large)
+*.h5
+*.pkl
+*.joblib
+*.model
+models/
+weights/
+
 # OS
 .DS_Store
 Thumbs.db
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# Cache
+.cache/
+*.cache
