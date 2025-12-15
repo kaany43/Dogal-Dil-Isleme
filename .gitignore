@@ -118,6 +118,7 @@ dmypy.json
 .idea/
 *.swp
 *.swo
+*~
 
 # OS
 .DS_Store
@@ -128,21 +129,25 @@ dmypy.json
 ehthumbs.db
 Thumbs.db
 
-# Machine Learning / NLP specific
-*.h5
-*.hdf5
-*.pkl
-*.pickle
-*.model
-*.bin
-checkpoints/
-logs/
-tensorboard/
-
-# NLTK data (if downloaded locally)
-nltk_data/
-
 # Temporary files
 *.tmp
 *.temp
-temp*.py
+.cache/
+
+# Model checkpoints and large data files
+*.h5
+*.pkl
+*.model
+*.bin
+checkpoints/
+models/
+
+# Logs
+logs/
+*.log
+
+# NLTK data
+nltk_data/
+
+# SpaCy models
+spacy_models/
